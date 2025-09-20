@@ -1,0 +1,31 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./api",
+    "rootDir": ".",
+    "module": "commonjs",
+    "target": "es2020",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@shared/*": ["./shared/*"]
+    }
+  },
+  "include": [
+    "api/**/*",
+    "server/**/*",
+    "shared/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "client",
+    "server/node-build.ts"
+  ]
+}

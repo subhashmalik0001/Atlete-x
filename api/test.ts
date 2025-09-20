@@ -13,13 +13,10 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
   
   res.status(200).json({ 
     success: true,
-    message: "AthleteX API is running!",
+    message: "API is working!",
     timestamp: new Date().toISOString(),
-    availableEndpoints: [
-      '/api/ping',
-      '/api/test'
-    ],
     method: req.method,
-    url: req.url
+    url: req.url,
+    environment: process.env.NODE_ENV || 'development'
   });
 }

@@ -11,14 +11,10 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
     return;
   }
   
+  const ping = process.env.PING_MESSAGE ?? "ping";
   res.status(200).json({ 
-    success: true,
-    message: "AthleteX API is running!",
+    message: ping,
     timestamp: new Date().toISOString(),
-    availableEndpoints: [
-      '/api/ping',
-      '/api/test'
-    ],
     method: req.method,
     url: req.url
   });

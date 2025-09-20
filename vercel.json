@@ -8,14 +8,10 @@
       "maxDuration": 30
     }
   },
-  "routes": [
+  "rewrites": [
     {
-      "src": "/api/(.*)",
-      "dest": "/api/index.ts"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/dist/spa/$1"
+      "source": "/api/(.*)",
+      "destination": "/api/index.ts"
     }
   ]
 }

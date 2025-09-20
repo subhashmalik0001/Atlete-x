@@ -1,0 +1,24 @@
+[build]
+  command = "npm run build"
+  functions = "netlify/functions"
+  publish = "dist/spa"
+
+[functions]
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/api/profile/*"
+  to = "/.netlify/functions/profile/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
+
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "GET, POST, PUT, DELETE, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type, Authorization"

@@ -1,0 +1,4 @@
+-- Temporarily disable RLS for testing
+ALTER TABLE test_attempts DISABLE ROW LEVEL SECURITY;
+ALTER TABLE emg_readings DISABLE ROW LEVEL SECURITY;
+ALTER TABLE profiles DISABLE ROW LEVEL SECURITY;
